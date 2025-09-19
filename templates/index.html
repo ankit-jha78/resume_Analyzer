@@ -1,0 +1,16 @@
+{% load static tailwind_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   {% tailwind_css %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Resume Analyzer</title>
+    
+</head>
+<body class="bg-gray-100 text-gray-800 flex justify-center items-center min-h-screen my-2">
+
+    {% block content %}{% endblock %}
+</body>
+</html>

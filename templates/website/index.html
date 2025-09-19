@@ -1,0 +1,98 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="bg-white shadow-xl rounded-2xl p-8 w-full max-w-2xl border border-gray-200">
+        <!-- Title -->
+        <h1 class="text-3xl font-bold text-center text-gray-900 mb-2">Smart Resume Analyzer</h1>
+        <p class="text-gray-600 text-center mb-6">
+            This Application helps you in your Resume Review with help of 
+            <span class="text-blue-600 font-semibold">GEMINI AI (LLM)</span>
+        </p>
+
+        <!-- Form Starts -->
+        <form method="POST" enctype="multipart/form-data" class="space-y-6">
+            {% csrf_token %}
+
+            <!-- Job Description -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Job Description:</label>
+                <textarea name="job_description"
+                    class="w-full rounded-md bg-gray-50 border border-gray-300 text-gray-800 p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+                    rows="4"></textarea>
+            </div>
+
+            <!-- Resume Upload -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Upload your Resume (PDF)...</label>
+                <div class="flex items-center justify-center w-full">
+                    <label
+                        class="flex flex-col w-full h-28 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 hover:bg-blue-50 transition">
+                        <div class="flex flex-col items-center justify-center pt-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-gray-400" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M7 16V4a2 2 0 012-2h6a2 2 0 012 2v12m-6 4h.01M6 20h12" />
+                            </svg>
+                            <p class="text-gray-500 text-sm mt-2">Drag and drop file here</p>
+                            <p class="text-xs text-gray-400">Limit 200MB per file • PDF</p>
+                        </div>
+                        <input type="file" name="resume" accept="application/pdf"  />
+                    </label>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="space-y-3">
+                <button type="submit" name="action" value="resume_info"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-md">
+                    Tell Me About the Resume
+                </button>
+
+                <button type="submit" name="action" value="improve_skills"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-md">
+                    How Can I Improvise my Skills
+                </button>
+
+                <button type="submit" name="action" value="missing_keywords"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-md">
+                    What are the Keywords That are Missing
+                </button>
+
+                <button type="submit" name="action" value="percentage_match"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-md">
+                    Percentage Match
+                </button>
+
+                <button type="submit" name="action" value="generate_questions"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg shadow-md">
+                    Generate Interview Questions
+                </button>
+            </div>
+
+            <!-- Custom Question -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Any Questions?</label>
+                <input type="text" name="custom_question"
+                    class="w-full rounded-md bg-gray-50 border border-red-400 text-gray-800 p-3 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+            </div>
+
+            <!-- Submit -->
+            <div class="flex justify-center">
+                <button type="submit" name="action" value="custom_question_submit"
+                    class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg shadow-md">
+                    Go
+                </button>
+            </div>
+        </form>
+        <!-- Form Ends -->
+         {% if response %}
+    <div class="mt-8 bg-gray-50 border border-gray-200 shadow-md rounded-xl p-6">
+        <h2 class="text-xl font-semibold text-gray-800 mb-3">✨ Analysis Result</h2>
+        <p class="text-gray-700 whitespace-pre-line">{{ response }}</p>
+    </div>
+    {% endif %}
+    </div>
+
+    
+
+
+{% endblock %}

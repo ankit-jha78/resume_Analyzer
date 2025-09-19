@@ -1,0 +1,8 @@
+pdfplumber
+sentence-transformers
+scikit-learn
+google-generativeai
+python-dotenv
+gunicorn
+Django
+tailwind
