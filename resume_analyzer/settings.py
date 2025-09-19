@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2co%+41_-_0kp-!0-ne)7#jufqkpf9j+$-wn#d&e_r5f)x&vd_'
 import os
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_browser_reload',  # Add this
+      
     'tailwind',   # Add this
     'theme',      # Add this after you run the init command below
     
