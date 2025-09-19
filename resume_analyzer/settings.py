@@ -25,7 +25,9 @@ import os
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["35.160.120.126","resume-analyzer-1-hlwz.onrender.com"]
+ALLOWED_HOSTS = ['127.0.0.1',
+                 'resume-analyzer-1-hlwz.onrender.com',
+                ]
 
 from dotenv import load_dotenv
 
