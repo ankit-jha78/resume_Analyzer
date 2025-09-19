@@ -25,8 +25,10 @@ import os
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',
+ALLOWED_HOSTS = [
                  'resume-analyzer-1-hlwz.onrender.com',
+                 '127.0.0.1',
+                 'localhost',
                 ]
 
 from dotenv import load_dotenv
