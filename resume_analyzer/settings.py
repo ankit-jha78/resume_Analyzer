@@ -68,7 +68,7 @@ MIDDLEWARE = [
 # ------------------------------------------------------------------------------
 ROOT_URLCONF = "resume_analyzer.urls"
 WSGI_APPLICATION = "resume_analyzer.wsgi.application"
-s
+
 
 # ------------------------------------------------------------------------------
 # Templates
