@@ -54,6 +54,7 @@ NPM_BIN_PATH = os.getenv("NPM_BIN_PATH", "/usr/bin/npm")
 # ------------------------------------------------------------------------------
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -67,6 +68,7 @@ MIDDLEWARE = [
 # ------------------------------------------------------------------------------
 ROOT_URLCONF = "resume_analyzer.urls"
 WSGI_APPLICATION = "resume_analyzer.wsgi.application"
+s
 
 # ------------------------------------------------------------------------------
 # Templates
@@ -101,7 +103,7 @@ DATABASES = {
 # ------------------------------------------------------------------------------
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # ------------------------------------------------------------------------------
 # Password validation
 # ------------------------------------------------------------------------------
