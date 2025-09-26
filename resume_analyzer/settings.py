@@ -22,7 +22,7 @@ GENAI_API_KEY = os.getenv("GENAI_API_KEY")  # Your external API key
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = [
-    "resume-analyzer-1-hlwz.onrender.com",
+    "resume-analyzer-3-xo68.onrender.com",
     "127.0.0.1",
     "localhost",
 ]
